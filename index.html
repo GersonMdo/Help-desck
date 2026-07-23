@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Chamados - Help Desk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Help Desk</p>
+          <h1>Sistema de Chamados</h1>
+          <p class="subtitle">
+            Gerencie solicitações de suporte de forma simples, com registro,
+            acompanhamento e atualização de status.
+          </p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <form id="ticketForm" class="form-card">
+          <h2>Abrir novo chamado</h2>
+
+          <div class="grid">
+            <label>
+              Solicitante
+              <input type="text" id="requester" required placeholder="Nome do usuário" />
+            </label>
+
+            <label>
+              Setor
+              <input type="text" id="sector" required placeholder="Ex.: Financeiro" />
+            </label>
+
+            <label>
+              Assunto
+              <input type="text" id="subject" required placeholder="Ex.: Erro no login" />
+            </label>
+
+            <label>
+              Prioridade
+              <select id="priority" required>
+                <option value="Baixa">Baixa</option>
+                <option value="Média" selected>Média</option>
+                <option value="Alta">Alta</option>
+                <option value="Crítica">Crítica</option>
+              </select>
+            </label>
+
+            <label>
+              Categoria
+              <select id="category" required>
+                <option value="Rede">Rede</option>
+                <option value="Software" selected>Software</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Usuário">Usuário</option>
+              </select>
+            </label>
+
+            <label>
+              Status
+              <select id="status">
+                <option value="Aberto" selected>Aberto</option>
+                <option value="Em atendimento">Em atendimento</option>
+                <option value="Resolvido">Resolvido</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Descrição
+            <textarea id="description" rows="4" required placeholder="Descreva o problema..."></textarea>
+          </label>
+
+          <button type="submit">Criar chamado</button>
+        </form>
+
+        <aside class="summary-card">
+          <h3>Resumo</h3>
+          <div class="stats">
+            <div>
+              <strong id="totalCount">0</strong>
+              <span>Total</span>
+            </div>
+            <div>
+              <strong id="openCount">0</strong>
+              <span>Abertos</span>
+            </div>
+            <div>
+              <strong id="resolvedCount">0</strong>
+              <span>Resolvidos</span>
+            </div>
+          </div>
+          <p class="hint">
+            Os dados ficam salvos no navegador, então você pode testar o fluxo sem precisar de banco.
+          </p>
+        </aside>
+      </section>
+
+      <section class="tickets-section">
+        <div class="section-title">
+          <h2>Chamados cadastrados</h2>
+          <span id="ticketSubtitle">Nenhum chamado ainda</span>
+        </div>
+        <div id="ticketsList" class="tickets-list"></div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

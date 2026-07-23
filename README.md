@@ -16,8 +16,3 @@ python -m http.server 8000
 ```
 
 Depois acesse http://localhost:8000
-
-- `git init` / `git add .` / `git commit -m "..."` se você chegar a usar Git
-- aviso de que é um projeto local e não tem backend
-- instruções de como testar no celular ou no desktop
-
